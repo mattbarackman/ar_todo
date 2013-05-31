@@ -15,7 +15,9 @@ class View
   end
 
   def self.display_list(tasks)
-
+    1.upto(tasks.length) do |i|
+      puts "#{i}. #{tasks[i-1].text}" 
+    end
   end
 
 end
