@@ -21,8 +21,6 @@ class Task < ActiveRecord::Base
   end
 
   def find_by_display_number(n)
+    Task.all[n - 1]
   end
-
-
-
 end
