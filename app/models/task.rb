@@ -17,6 +17,7 @@ class Task < ActiveRecord::Base
 
   def mark_completed!
     self.completed = true
+    self.save
   end
 
   def find_by_display_number(n)
