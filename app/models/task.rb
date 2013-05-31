@@ -1,3 +1,5 @@
+require_relative "../../config/application"
+
 class Task < ActiveRecord::Base
 
 
@@ -18,9 +20,10 @@ class Task < ActiveRecord::Base
   def mark_completed!
     self.completed = true
     self.save
+    self
   end
 
-  def find_by_display_number(n)
+  def self.find_by_display_number(n)
     Task.all[n - 1]
   end
 end

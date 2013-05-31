@@ -9,14 +9,20 @@ class View
     puts task.text
   end
 
+  def self.display_completed_message(task)
+    puts "Congrats! You completed the task:"
+    puts task.text
+  end
+
   def self.display_deleted_message(task)
     puts "You deleted the task:"
     puts task.text
   end
 
   def self.display_list(tasks)
+    puts "Tasks:"
     1.upto(tasks.length) do |i|
-      puts "#{i}. #{tasks[i-1].text}" 
+      puts "#{i.to_s.rjust(3)}. [#{tasks[i-1].completed ? "X": " "}] #{tasks[i-1].text}" 
     end
   end
 
