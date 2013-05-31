@@ -16,6 +16,7 @@ class Task < ActiveRecord::Base
   # Task.update(15, :user_name => 'Samuel', :group => 'expert')
 
   def mark_completed!
+    self.completed = true
   end
 
   def find_by_display_number(n)
