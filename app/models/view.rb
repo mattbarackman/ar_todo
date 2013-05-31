@@ -10,6 +10,8 @@ class View
   end
 
   def self.display_deleted_message(task)
+    puts "You deleted the task:"
+    puts task.text
   end
 
   def self.display_list(tasks)
