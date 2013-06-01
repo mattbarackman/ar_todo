@@ -1,5 +1,12 @@
 class View
 
+  def show_all_lists(lists)
+    puts "Lists"
+    1.upto(lists.length) do |i|
+      puts "#{i.to_s.rjust(3)}. #{lists[i-1].name}"
+    end
+  end
+
   def self.display_list_cleared
     puts "All tasks deleted. Let's start a fresh list!" 
   end

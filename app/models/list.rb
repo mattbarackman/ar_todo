@@ -1,9 +1,9 @@
 require_relative "../../config/application"
 
-class Task < ActiveRecord::Base
+class List < ActiveRecord::Base
 
-  belongs_to :list , :foreign_key => "list_id"
-  
+  has_many :tasks, :dependent => :destroy
+
   # Task.create(args) : create a new task
 
   # Task.destroy_all : deletes all tasks
@@ -18,13 +18,4 @@ class Task < ActiveRecord::Base
 
   # Task.update(15, :user_name => 'Samuel', :group => 'expert')
 
-  def mark_completed!
-    self.completed = true
-    self.save
-    self
-  end
-
-  def self.find_by_display_number(n)
-    Task.all[n - 1]
-  end
 end
